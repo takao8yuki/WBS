@@ -1,0 +1,124 @@
+classDiagram
+    class Date {
+        -int year
+        -int month
+        -int day
+        +Date()
+        +Date(year: int, month: int, day: int)
+        +Date(dateString: string)
+        +toString(): string
+        +isValid(): bool
+        +getCurrentDate(): Date
+        +operator==(): bool
+        +operator<(): bool
+        +operator>(): bool
+    }
+    
+    class ProjectStatus {
+        <<enumeration>>
+        Planning
+        InProgress
+        Completed
+        OnHold
+    }
+    
+    class TaskStatus {
+        <<enumeration>>
+        NotStarted
+        InProgress
+        Completed
+        Blocked
+    }
+    
+    class Priority {
+        <<enumeration>>
+        Low
+        Medium
+        High
+        Critical
+    }
+    
+    class Task {
+        -int taskId
+        -string name
+        -string description
+        -Date startDate
+        -Date endDate
+        -int duration
+        -int parentTaskId
+        -int projectId
+        -TaskStatus status
+        -Priority priority
+        -string assignedTo
+        -vector~Task~ subTasks
+        +Task()
+        +Task(taskId: int, name: string, projectId: int)
+        +addSubTask(task: Task): void
+        +removeSubTask(taskId: int): bool
+        +findSubTask(taskId: int): Task*
+        +updateTask(): void
+        +calculateDuration(): void
+        +toXML(): string
+        +fromXML(xmlData: string): void
+    }
+    
+    class Project {
+        -int projectId
+        -string name
+        -string description
+        -Date startDate
+        -Date endDate
+        -ProjectStatus status
+        -vector~Task~ tasks
+        +Project()
+        +Project(projectId: int, name: string)
+        +addTask(task: Task): void
+        +removeTask(taskId: int): bool
+        +findTask(taskId: int): Task*
+        +updateProject(): void
+        +getCompletionPercentage(): double
+        +updateProjectStatus(): void
+        +toXML(): string
+        +fromXML(xmlData: string): void
+    }
+    
+    class XMLManager {
+        -string filePath
+        +XMLManager()
+        +XMLManager(filePath: string)
+        +saveToXML(projects: vector~Project~): bool
+        +loadFromXML(projects: vector~Project~): bool
+        +validateXML(xmlContent: string): bool
+        +createBackup(): bool
+        +escapeXML(text: string): string
+        +unescapeXML(xmlText: string): string
+    }
+    
+    class WBSManager {
+        -vector~Project~ projects
+        -XMLManager xmlManager
+        -int nextProjectId
+        -int nextTaskId
+        -string dataFilePath
+        +WBSManager()
+        +createProject(name: string): int
+        +deleteProject(projectId: int): bool
+        +addTaskToProject(projectId: int, taskName: string): int
+        +loadProjects(): bool
+        +saveProjects(): bool
+        +findProjectsByName(name: string): vector~Project*~
+        +generateProjectReport(projectId: int): string
+        +updateAllProjectStatuses(): void
+    }
+    
+    Project ||--o{ Task : contains
+    Task ||--o{ Task : hasSubTasks
+    WBSManager ||--o{ Project : manages
+    WBSManager ||--|| XMLManager : uses
+    Project ||--|| ProjectStatus : hasStatus
+    Task ||--|| TaskStatus : hasStatus
+    Task ||--|| Priority : hasPriority
+    Task ||--|| Date : hasStartDate
+    Task ||--|| Date : hasEndDate
+    Project ||--|| Date : hasStartDate
+    Project ||--|| Date : hasEndDate

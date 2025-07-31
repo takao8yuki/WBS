@@ -1,0 +1,30 @@
+erDiagram
+    PROJECT {
+        int project_id PK
+        string name
+        string description
+        date start_date
+        date end_date
+        enum status
+        datetime created_at
+        datetime updated_at
+    }
+    
+    TASK {
+        int task_id PK
+        string name
+        string description
+        date start_date
+        date end_date
+        int duration
+        int parent_task_id FK
+        int project_id FK
+        enum status
+        enum priority
+        string assigned_to
+        datetime created_at
+        datetime updated_at
+    }
+    
+    PROJECT ||--o{ TASK : "contains"
+    TASK ||--o{ TASK : "has_subtasks"

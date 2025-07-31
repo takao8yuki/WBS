@@ -192,15 +192,6 @@
     <ClInclude Include="WBSManager.h" />
     <ClInclude Include="XMLManager.h" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="WBS_Architecture.mmd" />
-    <None Include="WBS_Design.md" />
-    <None Include="WBS_Design_Class.mmd" />
-    <None Include="WBS_Design_ER.mmd" />
-    <None Include="WBS_Mermaid_Split_Guide.md" />
-    <None Include="WBS_Sequence_ProjectCreation.mmd" />
-    <None Include="WBS_Sequence_TaskCreation.mmd" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
