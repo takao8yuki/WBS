@@ -6,17 +6,17 @@ classDiagram
         +Date()
         +Date(int year, int month, int day)
         +Date(string dateString)
-        +getYear() int
-        +getMonth() int
-        +getDay() int
+        +getYear() : int
+        +getMonth() : int
+        +getDay() : int
         +setYear(int year)
         +setMonth(int month)
         +setDay(int day)
-        +toString() string
-        +isValid() bool
-        +getCurrentDate() Date
+        +toString() : string
+        +isValid() : bool
+        +getCurrentDate() : Date
     }
-    
+
     class ProjectStatus {
         <<enumeration>>
         Planning
@@ -24,7 +24,7 @@ classDiagram
         Completed
         OnHold
     }
-    
+
     class TaskStatus {
         <<enumeration>>
         NotStarted
@@ -32,7 +32,7 @@ classDiagram
         Completed
         Blocked
     }
-    
+
     class Priority {
         <<enumeration>>
         Low
@@ -40,7 +40,7 @@ classDiagram
         High
         Critical
     }
-    
+
     class Task {
         -int taskId
         -string name
@@ -54,17 +54,17 @@ classDiagram
         -Priority priority
         -string assignedTo
         +Task()
-        +getTaskId() int
-        +getName() string
-        +getDescription() string
-        +getStartDate() Date
-        +getEndDate() Date
-        +getDuration() int
-        +getParentTaskId() int
-        +getProjectId() int
-        +getStatus() TaskStatus
-        +getPriority() Priority
-        +getAssignedTo() string
+        +getTaskId() : int
+        +getName() : string
+        +getDescription() : string
+        +getStartDate() : Date
+        +getEndDate() : Date
+        +getDuration() : int
+        +getParentTaskId() : int
+        +getProjectId() : int
+        +getStatus() : TaskStatus
+        +getPriority() : Priority
+        +getAssignedTo() : string
         +setTaskId(int id)
         +setName(string name)
         +setDescription(string description)
@@ -76,10 +76,10 @@ classDiagram
         +setStatus(TaskStatus status)
         +setPriority(Priority priority)
         +setAssignedTo(string assignee)
-        +toXML() string
+        +toXML() : string
         +fromXML(string xmlData)
     }
-    
+
     class Project {
         -int projectId
         -string name
@@ -87,17 +87,17 @@ classDiagram
         -Date startDate
         -Date endDate
         -ProjectStatus status
-        -vector~Task~ tasks
+        -vector<Task> tasks
         +Project()
         +Project(int projectId, string name)
         +Project(int projectId, string name, string description, Date startDate, Date endDate)
-        +getProjectId() int
-        +getName() string
-        +getDescription() string
-        +getStartDate() Date
-        +getEndDate() Date
-        +getStatus() ProjectStatus
-        +getTasks() vector~Task~
+        +getProjectId() : int
+        +getName() : string
+        +getDescription() : string
+        +getStartDate() : Date
+        +getEndDate() : Date
+        +getStatus() : ProjectStatus
+        +getTasks() : vector<Task>
         +setProjectId(int id)
         +setName(string name)
         +setDescription(string description)
@@ -105,81 +105,74 @@ classDiagram
         +setEndDate(Date date)
         +setStatus(ProjectStatus status)
         +addTask(Task task)
-        +removeTask(int taskId) bool
+        +removeTask(int taskId) : bool
         +updateProject(string name, string description, Date startDate, Date endDate)
-        +getTaskCount() int
-        +getCompletedTaskCount() int
-        +getCompletionPercentage() double
+        +getTaskCount() : int
+        +getCompletedTaskCount() : int
+        +getCompletionPercentage() : double
         +updateProjectStatus()
-        +isCompleted() bool
-        +getTotalTaskCount() int
-        +getEarliestStartDate() Date
-        +getLatestEndDate() Date
-        +toXML() string
+        +isCompleted() : bool
+        +getTotalTaskCount() : int
+        +getEarliestStartDate() : Date
+        +getLatestEndDate() : Date
+        +toXML() : string
         +fromXML(string xmlData)
     }
-    
+
     class XMLManager {
         -string filePath
         +XMLManager()
         +XMLManager(string filePath)
-        +saveToXML(vector~Project~ projects) bool
-        +loadFromXML(vector~Project~ projects) bool
-        +validateXML(string xmlContent) bool
-        +createBackup() bool
-        +escapeXML(string text) string
-        +unescapeXML(string xmlText) string
+        +saveToXML(vector<Project> projects) : bool
+        +loadFromXML(vector<Project> projects) : bool
+        +validateXML(string xmlContent) : bool
+        +createBackup() : bool
+        +escapeXML(string text) : string
+        +unescapeXML(string xmlText) : string
         +setFilePath(string path)
-        +getFilePath() string
+        +getFilePath() : string
     }
-    
+
     class WBSManager {
-        -vector~Project~ projects
+        -vector<Project> projects
         -XMLManager xmlManager
         -int nextProjectId
         -int nextTaskId
         -string dataFilePath
         +WBSManager()
         +WBSManager(string dataFilePath)
-        +createProject(string name, string description) int
-        +createProject(string name, string description, Date startDate, Date endDate) int
-        +deleteProject(int projectId) bool
-        +getProjects() vector~Project~
-        +addTaskToProject(int projectId, string taskName, string description) int
-        +addTaskToProject(int projectId, string taskName, string description, Date startDate, Date endDate) int
-        +deleteTaskFromProject(int projectId, int taskId) bool
-        +addSubTask(int projectId, int parentTaskId, string taskName, string description) bool
-        +loadProjects() bool
-        +saveProjects() bool
-        +exportToXML(string exportPath) bool
-        +importFromXML(string importPath) bool
-        +getTotalProjectCount() int
-        +getCompletedProjectCount() int
-        +getTotalTaskCount() int
-        +getCompletedTaskCount() int
-        +findProjectsByName(string name) vector~Project*~
-        +findTasksByName(string name) vector~Task*~
-        +findTasksByAssignee(string assignee) vector~Task*~
-        +findTasksByStatus(TaskStatus status) vector~Task*~
-        +findTasksByPriority(Priority priority) vector~Task*~
-        +generateProjectReport(int projectId) string
-        +generateTaskReport(int projectId, int taskId) string
-        +generateSummaryReport() string
+        +createProject(string name, string description) : int
+        +createProject(string name, string description, Date startDate, Date endDate) : int
+        +deleteProject(int projectId) : bool
+        +getProjects() : vector<Project>
+        +addTaskToProject(int projectId, string taskName, string description) : int
+        +addTaskToProject(int projectId, string taskName, string description, Date startDate, Date endDate) : int
+        +deleteTaskFromProject(int projectId, int taskId) : bool
+        +addSubTask(int projectId, int parentTaskId, string taskName, string description) : bool
+        +loadProjects() : bool
+        +saveProjects() : bool
+        +exportToXML(string exportPath) : bool
+        +importFromXML(string importPath) : bool
+        +getTotalProjectCount() : int
+        +getCompletedProjectCount() : int
+        +getTotalTaskCount() : int
+        +getCompletedTaskCount() : int
+        +findProjectsByName(string name) : vector<Project>
+        +findTasksByName(string name) : vector<Task>
+        +findTasksByAssignee(string assignee) : vector<Task>
+        +findTasksByStatus(TaskStatus status) : vector<Task>
+        +findTasksByPriority(Priority priority) : vector<Task>
+        +generateProjectReport(int projectId) : string
+        +generateTaskReport(int projectId, int taskId) : string
+        +generateSummaryReport() : string
         +updateAllProjectStatuses()
-        +isProjectNameUnique(string name, int excludeProjectId) bool
+        +isProjectNameUnique(string name, int excludeProjectId) : bool
         +setDataFilePath(string path)
-        +getDataFilePath() string
+        +getDataFilePath() : string
     }
-    
+
     %% Relationships
-    Project ||--o{ Task : contains
-    Task ||--o{ Task : hasSubTasks
-    WBSManager ||--o{ Project : manages
-    WBSManager ||--|| XMLManager : uses
-    Project ||--|| ProjectStatus : hasStatus
-    Task ||--|| TaskStatus : hasStatus
-    Task ||--|| Priority : hasPriority
-    Project ||--|| Date : hasStartDate
-    Project ||--|| Date : hasEndDate
-    Task ||--|| Date : hasStartDate
-    Task ||--|| Date : hasEndDate
+    WBSManager "1" *-- "0..*" Project : manages
+    WBSManager "1" *-- "1" XMLManager : uses
+    Project "1" *-- "0..*" Task : contains
+    Task "1" -- "0..*" Task : has sub-tasks
