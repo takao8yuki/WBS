@@ -192,6 +192,9 @@
     <ClInclude Include="WBSManager.h" />
     <ClInclude Include="XMLManager.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="WBS_Class_Diagram.mmd" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

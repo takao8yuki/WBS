@@ -8,22 +8,22 @@
   <status>Planning</status>
 </project>
 <project id="-1">
-  <name>WebƒTƒCƒgŠJ”­ƒvƒƒWƒFƒNƒg</name>
+  <name>Webï¿½Tï¿½Cï¿½gï¿½Jï¿½ï¿½ï¿½vï¿½ï¿½ï¿½Wï¿½Fï¿½Nï¿½g</name>
   <description></description>
   <start_date>2025-07-31</start_date>
   <end_date>2025-07-31</end_date>
   <status>Planning</status>
 </project>
 <project id="2">
-  <name>WebƒTƒCƒgŠJ”­ƒvƒƒWƒFƒNƒg</name>
-  <description>V‚µ‚¢WebƒTƒCƒg‚ÌŠJ”­ƒvƒƒWƒFƒNƒg</description>
+  <name>Webï¿½Tï¿½Cï¿½gï¿½Jï¿½ï¿½ï¿½vï¿½ï¿½ï¿½Wï¿½Fï¿½Nï¿½g</name>
+  <description>ï¿½Vï¿½ï¿½ï¿½ï¿½Webï¿½Tï¿½Cï¿½gï¿½ÌŠJï¿½ï¿½ï¿½vï¿½ï¿½ï¿½Wï¿½Fï¿½Nï¿½g</description>
   <start_date>2025-07-31</start_date>
   <end_date>2025-07-31</end_date>
   <status>Planning</status>
   <tasks>
   <task id="2">
-    <name>—vŒ’è‹`</name>
-    <description>ƒvƒƒWƒFƒNƒg‚Ì—vŒ‚ð’è‹`‚·‚é</description>
+    <name>ï¿½vï¿½ï¿½ï¿½ï¿½`</name>
+    <description>ï¿½vï¿½ï¿½ï¿½Wï¿½Fï¿½Nï¿½gï¿½Ì—vï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½ï¿½</description>
     <start_date>2025-07-31</start_date>
     <end_date>2025-07-31</end_date>
     <duration>0</duration>
@@ -34,8 +34,8 @@
     <assigned_to></assigned_to>
   </task>
     <task id="3">
-    <name>ÝŒv</name>
-    <description>ƒVƒXƒeƒ€‚ÌÝŒv‚ðs‚¤</description>
+    <name>ï¿½ÝŒv</name>
+    <description>ï¿½Vï¿½Xï¿½eï¿½ï¿½ï¿½ÌÝŒvï¿½ï¿½sï¿½ï¿½</description>
     <start_date>2025-07-31</start_date>
     <end_date>2025-07-31</end_date>
     <duration>0</duration>
@@ -46,8 +46,8 @@
     <assigned_to></assigned_to>
   </task>
     <task id="4">
-    <name>ŽÀ‘•</name>
-    <description>ƒVƒXƒeƒ€‚ÌŽÀ‘•‚ðs‚¤</description>
+    <name>ï¿½ï¿½ï¿½ï¿½</name>
+    <description>ï¿½Vï¿½Xï¿½eï¿½ï¿½ï¿½ÌŽï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½</description>
     <start_date>2025-07-31</start_date>
     <end_date>2025-07-31</end_date>
     <duration>0</duration>
@@ -58,8 +58,8 @@
     <assigned_to></assigned_to>
   </task>
     <task id="5">
-    <name>ƒeƒXƒg</name>
-    <description>ƒVƒXƒeƒ€‚ÌƒeƒXƒg‚ðs‚¤</description>
+    <name>ï¿½eï¿½Xï¿½g</name>
+    <description>ï¿½Vï¿½Xï¿½eï¿½ï¿½ï¿½Ìƒeï¿½Xï¿½gï¿½ï¿½sï¿½ï¿½</description>
     <start_date>2025-07-31</start_date>
     <end_date>2025-07-31</end_date>
     <duration>0</duration>

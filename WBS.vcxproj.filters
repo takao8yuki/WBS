@@ -57,4 +57,7 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="WBS_Class_Diagram.mmd" />
+  </ItemGroup>
 </Project>
