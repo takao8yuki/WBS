@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wbs_projects>
+<project id="2">
+  <name>Webサイト開発プロジェクト</name>
+  <description>新しいWebサイトの開発プロジェクト</description>
+  <start_date>2025-07-31</start_date>
+  <end_date>2025-07-31</end_date>
+  <status>Planning</status>
+  <tasks>
+  <task id="2">
+    <name>要件定義</name>
+    <description>プロジェクトの要件を定義する</description>
+    <start_date>2025-07-31</start_date>
+    <end_date>2025-07-31</end_date>
+    <duration>0</duration>
+    <parent_task_id>-1</parent_task_id>
+    <project_id>2</project_id>
+    <status>NotStarted</status>
+    <priority>Medium</priority>
+    <assigned_to></assigned_to>
+  </task>
+    <task id="3">
+    <name>設計</name>
+    <description>システムの設計を行う</description>
+    <start_date>2025-07-31</start_date>
+    <end_date>2025-07-31</end_date>
+    <duration>0</duration>
+    <parent_task_id>-1</parent_task_id>
+    <project_id>2</project_id>
+    <status>NotStarted</status>
+    <priority>Medium</priority>
+    <assigned_to></assigned_to>
+  </task>
+    <task id="4">
+    <name>実装</name>
+    <description>システムの実装を行う</description>
+    <start_date>2025-07-31</start_date>
+    <end_date>2025-07-31</end_date>
+    <duration>0</duration>
+    <parent_task_id>-1</parent_task_id>
+    <project_id>2</project_id>
+    <status>NotStarted</status>
+    <priority>Medium</priority>
+    <assigned_to></assigned_to>
+  </task>
+    <task id="5">
+    <name>テスト</name>
+    <description>システムのテストを行う</description>
+    <start_date>2025-07-31</start_date>
+    <end_date>2025-07-31</end_date>
+    <duration>0</duration>
+    <parent_task_id>-1</parent_task_id>
+    <project_id>2</project_id>
+    <status>NotStarted</status>
+    <priority>Medium</priority>
+    <assigned_to></assigned_to>
+  </task>
+    </tasks>
+</project>
+</wbs_projects>

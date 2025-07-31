@@ -1,0 +1,18 @@
+sequenceDiagram
+    participant User
+    participant WBSManager
+    participant Project
+    participant XMLManager
+    participant XMLFile
+    
+    User->>WBSManager: createProject(name, description)
+    WBSManager->>WBSManager: generateNewProjectId()
+    WBSManager->>Project: new Project(id, name, description)
+    Project->>Project: initialize()
+    WBSManager->>WBSManager: projects.push_back(project)
+    WBSManager->>XMLManager: saveToXML(projects)
+    XMLManager->>XMLManager: generateProjectsXML(projects)
+    XMLManager->>XMLFile: write XML data
+    XMLFile-->>XMLManager: success/failure
+    XMLManager-->>WBSManager: save result
+    WBSManager-->>User: project ID

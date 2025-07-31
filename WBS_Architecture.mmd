@@ -1,0 +1,49 @@
+graph TB
+    subgraph "Presentation Layer"
+        A[Console UI]
+        B[Menu System]
+    end
+    
+    subgraph "Business Logic Layer"
+        C[WBSManager]
+        D[Project Manager]
+        E[Task Manager]
+    end
+    
+    subgraph "Data Model Layer"
+        F[Project]
+        G[Task]
+        H[Date]
+        I[Enums]
+    end
+    
+    subgraph "Data Access Layer"
+        J[XMLManager]
+        K[File I/O]
+    end
+    
+    subgraph "Storage Layer"
+        L[(XML Files)]
+        M[(Backup Files)]
+    end
+    
+    A --> C
+    B --> C
+    C --> D
+    C --> E
+    C --> J
+    D --> F
+    E --> G
+    F --> H
+    G --> H
+    F --> I
+    G --> I
+    J --> K
+    K --> L
+    K --> M
+    
+    style A fill:#e3f2fd
+    style C fill:#f3e5f5
+    style F fill:#e8f5e8
+    style J fill:#fff3e0
+    style L fill:#fce4ec

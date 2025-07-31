@@ -1,0 +1,18 @@
+sequenceDiagram
+    participant User
+    participant WBSManager
+    participant Project
+    participant Task
+    participant XMLManager
+    
+    User->>WBSManager: addTaskToProject(projectId, taskName, description)
+    WBSManager->>WBSManager: findProject(projectId)
+    WBSManager->>WBSManager: generateNewTaskId()
+    WBSManager->>Task: new Task(taskId, taskName, projectId)
+    Task->>Task: initialize()
+    WBSManager->>Project: addTask(task)
+    Project->>Project: tasks.push_back(task)
+    Project->>Project: updateProjectStatus()
+    WBSManager->>XMLManager: saveToXML(projects)
+    XMLManager-->>WBSManager: save result
+    WBSManager-->>User: task ID
